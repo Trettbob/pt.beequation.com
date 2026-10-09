@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!--hreflang-->
+<link rel="alternate" hreflang="en-GB" href="https://beequation.com/">
+<link rel="alternate" hreflang="fr" href="https://fr.beequation.com/">
+<link rel="alternate" hreflang="es" href="https://es.beequation.com/">
+<link rel="alternate" hreflang="de" href="https://de.beequation.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://pt.beequation.com/">
+<link rel="alternate" hreflang="x-default" href="https://beequation.com/">
+<!--/hreflang-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beequation: jogo de cálculo mental para crianças e adultos</title>
+<meta name="description" content="Ache o número que outros dois formam somando ou multiplicando. Desafios de cálculo mental grátis a partir dos 5 anos, já no navegador e em breve no iPhone e no Android. Sem anúncios.">
+<link rel="canonical" href="https://pt.beequation.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beequation">
+<meta property="og:title" content="Beequation: jogo de cálculo mental para crianças e adultos">
+<meta property="og:description" content="Ache o número que outros dois formam somando ou multiplicando. Desafios de cálculo mental grátis a partir dos 5 anos, já no navegador e em breve no iPhone e no Android. Sem anúncios.">
+<meta property="og:url" content="https://pt.beequation.com/">
+<meta property="og:image" content="https://beequation.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Beequation: ache o número formado por outros dois. Um favo de números em que 14 + 6 = 20.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://beequation.com/#org","name":"Trett Labs Limited","url":"https://trettlabs.com","logo":"https://beequation.com/assets/beequation-icon.png","email":"hello@beequation.com","identifier":{"@type":"PropertyValue","propertyID":"Companies House company number","value":"17310137"},"address":{"@type":"PostalAddress","streetAddress":"The 1812 Building, Wheatley Park","addressLocality":"Mirfield","addressRegion":"West Yorkshire","postalCode":"WF14 8HE","addressCountry":"GB"},"sameAs":["https://www.facebook.com/beequationapp","https://www.instagram.com/beequationapp","https://www.tiktok.com/@beequationapp","https://www.youtube.com/@beequationapp","https://x.com/beequationapp"]},{"@type":"WebSite","@id":"https://beequation.com/#website","url":"https://beequation.com/","name":"Beequation","inLanguage":"en-GB","publisher":{"@id":"https://beequation.com/#org"}}]}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#12161F">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+:root {
+  --ground: #EEF1F5; --card: #FFFFFF; --ink: #12161F; --mute: #5B6474; --line: #E3E7EE;
+  --cobalt: #2B50E8; --honey: #FFB020; --honey-ink: #12161F;
+  --night: #12161F; --night-cell: #222938; --night-ink: #F2F4F8; --night-mute: #9AA3B2;
+  --sky: #EAF6FF; --grape: #6A4BF5; --grape-lip: #3B24A8; --kid-ink: #1C1A4A; --kid-soft: #5A5688;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ground: #0F131A; --card: #1A2030; --ink: #F2F4F8; --mute: #9AA3B2; --line: #2A3142; --cobalt: #7D95FF; }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 18px/1.55 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; }
+a { color: var(--cobalt); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, .cell:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.top { display: flex; align-items: center; gap: 22px; padding: 18px 0; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 21px; letter-spacing: -0.4px; color: inherit; text-decoration: none; flex: 1; }
+.hex { width: 24px; height: 28px; background: var(--honey); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); flex: none; }
+.top a:not(.brand) { color: inherit; text-decoration: none; font-weight: 500; }
+.top a:not(.brand):hover { color: var(--honey); }
+.top a { white-space: nowrap; }
+@media (max-width: 640px) { .top { flex-wrap: wrap; gap: 6px 20px; } .top .brand { flex-basis: 100%; margin-bottom: 4px; } }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px; border-radius: 16px; font-weight: 700; font-size: 17px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+.btn.honey { background: var(--honey); color: var(--honey-ink); }
+.btn.plain { background: var(--card); color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+.doc { max-width: 720px; padding: 40px 0 20px; }
+.doc h1 { font-size: clamp(38px, 6vw, 56px); line-height: 1.02; letter-spacing: -2px; margin: 0 0 18px; }
+.doc h2 { font-size: 21px; margin: 30px 0 6px; }
+.doc p { margin: 0 0 12px; }
+footer { margin-top: 80px; padding: 32px 0 48px; border-top: 1px solid var(--line); font-size: 15px; color: var(--mute); }
+footer .cols { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; margin-bottom: 14px; }
+footer a { color: var(--mute); }
+footer a:hover { color: var(--ink); }
+.lang { position: relative; } .lang summary { list-style: none; cursor: pointer; font-weight: 600; padding: 3px 10px; border-radius: 10px; box-shadow: inset 0 0 0 1.5px var(--line); } .lang summary::-webkit-details-marker { display: none; } .lang .langs { position: absolute; right: 0; top: calc(100% + 6px); background: var(--card); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.18); padding: 6px; display: grid; min-width: 150px; z-index: 20; } .lang .langs a { padding: 8px 12px; border-radius: 8px; } .lang .langs a:hover { background: var(--ground); } .lang .langs a[aria-current] { font-weight: 700; }
+</style>
+<style>
+.hero { background: var(--night); color: var(--night-ink); border-radius: 32px; padding: 52px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; align-items: center; margin-top: 8px; }
+.hero h1 { font-size: clamp(42px, 6.2vw, 74px); line-height: 0.98; letter-spacing: -2.5px; margin: 0; }
+.hero .lede { font-size: 20px; color: #CBD1DB; margin: 22px 0 28px; max-width: 30ch; }
+.hero .soon { display: block; margin-top: 16px; font-size: 15px; color: var(--night-mute); }
+.play { background: #0A0D13; border-radius: 26px; padding: 22px; }
+.play-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; color: var(--night-mute); }
+.play-top b { color: var(--night-ink); font-weight: 600; }
+#board { display: block; width: 100%; height: auto; max-height: 420px; margin: 8px auto; touch-action: manipulation; }
+#board .cell { cursor: pointer; }
+#board .cell polygon { transition: fill .15s; }
+#board .cell:hover polygon.face { fill: #2C3446; }
+#board text { pointer-events: none; font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; font-weight: 600; }
+#board .shake { animation: shake .3s; transform-box: fill-box; transform-origin: center; }
+@keyframes shake { 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(3px); } }
+@media (prefers-reduced-motion: reduce) { #board .shake { animation: none; } #board .cell polygon { transition: none; } }
+.status { min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.status p { margin: 0; font-size: 17px; }
+.status .eq { color: var(--honey); font-weight: 700; font-size: 24px; }
+.status .btn { min-height: 44px; padding: 0 16px; font-size: 15px; }
+section { margin-top: 96px; scroll-margin-top: 20px; }
+.sec-h { font-size: clamp(34px, 4.6vw, 52px); line-height: 1.02; letter-spacing: -1.6px; margin: 0 0 12px; }
+.sec-lede { color: var(--mute); font-size: 19px; max-width: 46ch; margin: 0 0 32px; }
+.apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.app { border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px; }
+.app img { width: 88px; height: 88px; border-radius: 21px; }
+.app h3 { font-size: 34px; letter-spacing: -1px; margin: 4px 0 0; line-height: 1.05; }
+.app .who { font-size: 16px; margin: 0; }
+.app ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.app li { display: flex; gap: 12px; align-items: flex-start; }
+.app li::before { content: ""; width: 14px; height: 16px; margin-top: 5px; flex: none; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: currentColor; }
+.app .foot { margin-top: auto; padding-top: 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; font-size: 15px; }
+.app-adult { background: var(--card); }
+.app-adult .who { color: var(--mute); }
+.app-adult li::before { background: var(--honey); }
+.app-kids { background: #EAF6FF; color: #1C1A4A; font-family: Fredoka, ui-rounded, 'SF Pro Rounded', system-ui, sans-serif; position: relative; overflow: hidden; }
+.app-kids h3 { font-weight: 700; letter-spacing: 0; }
+.app-kids .who { color: #5A5688; font-weight: 600; }
+.app-kids li { font-weight: 500; }
+.app-kids li:nth-child(4n+1)::before { background: #E0B21A; } .app-kids li:nth-child(4n+2)::before { background: #3FC497; }
+.app-kids li:nth-child(4n+3)::before { background: #EB72AC; } .app-kids li:nth-child(4n+4)::before { background: #4FAEE8; }
+.app-kids .tally { position: absolute; right: 18px; top: 22px; width: 120px; }
+.app-kids .btn { background: #6A4BF5; color: #fff; box-shadow: 0 5px 0 #3B24A8; font-family: inherit; min-height: 48px; }
+.app-kids a:not(.btn) { color: #4A30C9; }
+.soon-tag { display: inline-block; font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 99px; background: var(--ground); color: var(--mute); }
+.app-kids .soon-tag { background: #fff; color: #5A5688; }
+.promise { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; border-top: 2px solid var(--ink); padding-top: 26px; }
+.promise h3 { font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -1px; margin: 0 0 8px; line-height: 1; }
+.promise p { margin: 0; color: var(--mute); max-width: 30ch; }
+.teach { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 40px; align-items: center; background: var(--card); border-radius: 28px; padding: 40px; }
+.teach .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.teach img { width: 100%; max-width: 340px; height: auto; display: block; margin: 0 auto; border-radius: 10px; box-shadow: 0 0 0 1px var(--line); background: #fff; }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding: 30px 22px; border-radius: 26px; }
+  .apps, .teach { grid-template-columns: 1fr; }
+  .teach { padding: 28px 22px; }
+  .promise { grid-template-columns: 1fr; gap: 22px; }
+  .app { padding: 26px 22px; }
+  .app-kids .tally { width: 84px; right: 12px; top: 16px; }
+  .top a:not(.brand) { font-size: 16px; }
+  .top { gap: 14px; }
+}
+@media (max-width: 420px) { .top a[href="/#teachers"] { display: none; } }
+</style>
+
+</head>
+<body>
+<div class="wrap"><nav class="top" aria-label="Principal"><a class="brand" href="/"><span class="hex" aria-hidden="true"></span>Beequation</a><a href="/#apps">Apps</a><a href="/how-to-play.html">Como jogar</a><a href="/support.html">Ajuda</a><!--lang-menu--><details class="lang"><summary aria-label="Idioma">PT</summary><div class="langs"><a href="https://beequation.com/?lang=en" lang="en" hreflang="en" data-lang="en">English</a><a href="https://fr.beequation.com/" lang="fr" hreflang="fr" data-lang="fr">Français</a><a href="https://es.beequation.com/" lang="es" hreflang="es" data-lang="es">Español</a><a href="https://de.beequation.com/" lang="de" hreflang="de" data-lang="de">Deutsch</a><a href="https://pt.beequation.com/" lang="pt" hreflang="pt" data-lang="pt" aria-current="true">Português</a></div></details><!--/lang-menu--></nav></div>
+<main class="wrap">
+<section class="hero" style="margin-top:8px" aria-labelledby="hero-h">
+  <div>
+    <p style="margin:0 0 10px;font-weight:700;font-size:15px;letter-spacing:.6px;text-transform:uppercase;color:var(--mute)">Jogo de cálculo mental para crianças e adultos</p>
+    <h1 id="hero-h">Ache o número formado por outros dois.</h1>
+    <p class="lede">Cada favo esconde um número que é a soma (ou o produto) de outros dois. Ache rápido. Beequation é cálculo mental rápido para todas as idades, dos 5 anos aos especialistas.</p>
+    <a class="btn honey" href="https://beequation.com/play.html">Jogue grátis no navegador</a>
+    <span class="soon">Em breve no iPhone e no Android. Siga <a href="https://www.instagram.com/beequationapp" style="color:var(--honey)">@beequationapp</a> para saber do lançamento.</span>
+  </div>
+  <div class="play" aria-labelledby="try-h">
+    <div class="play-top"><b id="try-h">Experimente agora</b><span id="count">Desafio 1 de 6</span></div>
+    <svg id="board" role="group" aria-label="Tabuleiro do desafio"></svg>
+    <div class="status" aria-live="polite"><p id="msg">Toque no número que é a soma de outros dois.</p><button class="btn honey" id="next" hidden>Próximo desafio</button></div>
+    <noscript><p>Ative o JavaScript para jogar, ou <a href="https://beequation.com/play.html">abra o jogo completo</a>.</p></noscript>
+  </div>
+</section>
+
+<section id="apps" aria-labelledby="apps-h">
+  <h2 class="sec-h" id="apps-h">Dois apps, um só favo</h2>
+  <p class="sec-lede">O mesmo desafio, feito sob medida para adultos e para crianças.</p>
+  <div class="apps">
+    <article class="app app-adult" aria-labelledby="adult-h">
+      <img src="/assets/beequation-icon.webp" width="512" height="512" alt="Ícone do app Beequation">
+      <h3 id="adult-h">Beequation</h3>
+      <p class="who">Para adolescentes e adultos</p>
+      <ul>
+        <li>Um Diário Pro numerado novo todo dia, com sequências e um resultado para compartilhar</li>
+        <li>Blitz de 60 segundos: resolva o máximo que puder</li>
+        <li>64 níveis, de Ovo a Mente da Colmeia, com somas, tabuada, negativos, frações, decimais e misto</li>
+        <li>Trio: uma regra mais difícil, em que um número é a soma de outros três</li>
+        <li>Grande Colmeia: resolva quatro favos e depois um favo com as respostas deles</li>
+      </ul>
+      <div class="foot"><span class="soon-tag">iPhone e Android: em breve</span><a href="https://beequation.com/play.html">Jogar online</a></div>
+    </article>
+    <article class="app app-kids" aria-labelledby="kids-h">
+      <svg class="tally" viewBox="0 0 160 140" role="img" aria-label="A abelha Tally">
+        <ellipse cx="62" cy="38" rx="26" ry="20" fill="#DFF1FF" stroke="#1C1A4A" stroke-width="4" transform="rotate(-20 62 38)"/><ellipse cx="96" cy="34" rx="24" ry="19" fill="#DFF1FF" stroke="#1C1A4A" stroke-width="4" transform="rotate(18 96 34)"/>
+        <ellipse cx="80" cy="84" rx="52" ry="42" fill="#FFD84D" stroke="#1C1A4A" stroke-width="4"/><path d="M60 46 Q55 84 62 122" fill="none" stroke="#1C1A4A" stroke-width="10" stroke-linecap="round"/><path d="M84 42 Q78 84 86 126" fill="none" stroke="#1C1A4A" stroke-width="10" stroke-linecap="round"/>
+        <path d="M101 78 Q108 70 115 78" fill="none" stroke="#1C1A4A" stroke-width="4" stroke-linecap="round"/><path d="M98 94 Q112 112 126 92" fill="none" stroke="#1C1A4A" stroke-width="4" stroke-linecap="round"/><circle cx="124" cy="86" r="6" fill="#FFA8D2"/>
+        <path d="M112 46 Q118 22 132 16" fill="none" stroke="#1C1A4A" stroke-width="4" stroke-linecap="round"/><circle cx="134" cy="15" r="6" fill="#1C1A4A"/><path d="M28 88 L16 92 L28 96" fill="#1C1A4A" stroke="#1C1A4A" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+      <img src="/assets/beequation-kids-icon.webp" width="512" height="512" alt="Ícone do app Beequation Kids">
+      <h3 id="kids-h">Beequation Kids</h3>
+      <p class="who">De 5 a 12 anos</p>
+      <ul>
+        <li>Seis mundos e 35 níveis: Prado das Somas, Jardim da Tabuada, Floresta das Frações, Vila das Dezenas, Dunas Decimais e Grande Colmeia</li>
+        <li>A abelha Tally torce pela criança e dá uma dica quando ela empaca</li>
+        <li>Estrelas e figurinhas para colecionar, e nenhum relógio</li>
+        <li>Sem anúncios e sem coleta de dados. As compras ficam atrás de uma verificação de adulto</li>
+      </ul>
+      <div class="foot"><span class="soon-tag">iPhone e Android: em breve</span><a class="btn" href="https://beequation.com/play.html">Experimente grátis</a></div>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="what-h" style="max-width:760px">
+  <h2 class="sec-h" id="what-h">O que é o Beequation?</h2>
+  <p>Beequation é um jogo de cálculo mental criado pela Trett Labs Limited, no Reino Unido. Cada desafio é um pequeno favo de números, e só um deles é formado a partir de outros dois: somando ou, nos desafios de tabuada, multiplicando. Ache esse número e toque nele. Os desafios começam com somas até 10 para crianças de cinco anos e chegam a números de quatro algarismos, negativos, frações, decimais, o Trio de três números e a Grande Colmeia para adultos.</p>
+  <p>São dois apps: <b>Beequation Kids</b> para crianças de 5 a 12 anos e <b>Beequation</b> para adolescentes e adultos, com um Diário Pro novo todo dia. Os dois podem ser experimentados de graça, não têm anúncios e não coletam dados pessoais. <a href="/how-to-play.html">Aprenda a jogar</a> ou <a href="https://beequation.com/play.html">jogue grátis no navegador</a>.</p>
+</section>
+<section aria-labelledby="promise-h">
+  <h2 class="sec-h" id="promise-h" style="margin-bottom:28px">Feito para ser confiável</h2>
+  <div class="promise">
+    <div><h3>Sem anúncios</h3><p>Nem agora, nem nunca. Nada interrompe o desafio.</p></div>
+    <div><h3>Sem rastreamento</h3><p>Não coletamos dados pessoais. O progresso fica no seu aparelho.</p></div>
+    <div><h3>Grátis para experimentar</h3><p>Jogue de graça os níveis liberados e o desafio do dia. Libere todos os níveis a partir de £ 2,99 por mês, com 7 dias grátis. Cancele quando quiser.</p></div>
+  </div>
+</section>
+
+<section id="teachers" aria-labelledby="teach-h">
+  <div class="teach">
+    <div>
+      <h2 class="sec-h" id="teach-h">Desafios grátis para a sua turma</h2>
+      <p class="sec-lede" style="margin-bottom:0">Um pacote para imprimir com 24 favos, somas até 20 e tabuada, com gabarito. Projete um como aquecimento de dois minutos, ou entregue a folha como desafio cronometrado para a turma tentar bater na semana seguinte. (Pacote em inglês.)</p>
+      <div class="btns"><a class="btn honey" href="https://beequation.com/assets/beequation-puzzle-pack-a4.pdf" download>Baixar (A4)</a><a class="btn plain" href="https://beequation.com/assets/beequation-puzzle-pack-letter.pdf" download>Baixar (US Letter)</a></div>
+    </div>
+    <img src="/assets/pack-preview.webp" width="794" height="1123" loading="lazy" alt="Primeira página do pacote de desafios do Beequation Kids: doze favos coloridos com a abelha Tally e espaço para escrever a conta">
+  </div>
+</section>
+</main>
+<script>
+(() => {
+  const P = [{"op": "add", "cells": [10, 20, 14, 1, 15], "answer": 4, "pair": [2, 3]}, {"op": "add", "cells": [5, 15, 25, 17, 3, 1, 24], "answer": 2, "pair": [5, 6]}, {"op": "mul", "cells": [9, 36, 4, 2, 3], "answer": 1, "pair": [0, 2]}, {"op": "add", "cells": [30, 3, 40, 46, 37, 10, 8], "answer": 2, "pair": [0, 5]}, {"op": "mul", "cells": [4, 20, 6, 12, 2, 50, 95], "answer": 3, "pair": [2, 4]}, {"op": "add", "cells": [79, 45, 43, 35, 71, 18, 47, 27, 48], "answer": 1, "pair": [5, 7]}];
+  const ROWS = { 5: [2, 1, 2], 7: [2, 3, 2], 9: [1, 2, 3, 2, 1] };
+  const SQ3 = Math.sqrt(3), R = 50, W = SQ3 * R;
+  const svg = document.getElementById('board'), msg = document.getElementById('msg'), next = document.getElementById('next'), count = document.getElementById('count');
+  const NS = 'http://www.w3.org/2000/svg';
+  let i = 0, done = false;
+  const pts = (cx, cy, r) => Array.from({ length: 6 }, (_, k) => { const a = Math.PI / 3 * k - Math.PI / 2; return (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1); }).join(' ');
+  function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; }
+  function draw() {
+    const p = P[i], rows = ROWS[p.cells.length], widest = Math.max(...rows);
+    const Wd = widest * W, H = (rows.length - 1) * 1.5 * R + 2 * R;
+    svg.setAttribute('viewBox', `0 0 ${Wd} ${H}`);
+    svg.replaceChildren();
+    let n = 0;
+    rows.forEach((cnt, row) => { for (let c = 0; c < cnt; c++, n++) {
+      const x = Wd / 2 + (c - (cnt - 1) / 2) * W, y = R + row * 1.5 * R, idx = n, v = String(p.cells[idx]);
+      const g = el('g', { class: 'cell', role: 'button', tabindex: '0', 'aria-label': v }, svg);
+      el('polygon', { class: 'face', points: pts(x, y, R * 0.94), fill: '#222938' }, g);
+      const t = el('text', { x, y: y + 1, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': v.length > 2 ? 30 : 36, fill: '#F2F4F8' }, g);
+      t.textContent = v;
+      g.addEventListener('click', () => tap(idx, g));
+      g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tap(idx, g); } });
+    } });
+    count.textContent = `Desafio ${i + 1} de ${P.length}`;
+    msg.className = ''; msg.textContent = (p.op === 'add' ? 'Toque no número que é a soma de outros dois.' : 'Toque no número que é o produto de outros dois.');
+    next.hidden = true; done = false;
+  }
+  function tap(idx, g) {
+    if (done) return;
+    const p = P[i], cells = svg.querySelectorAll('.cell');
+    if (idx === p.answer) {
+      done = true;
+      cells.forEach((c, k) => { const f = c.querySelector('polygon'), t = c.querySelector('text');
+        if (k === p.answer) { f.setAttribute('fill', '#FFB020'); t.setAttribute('fill', '#12161F'); }
+        else if (p.pair.includes(k)) { f.setAttribute('fill', '#4A3A17'); t.setAttribute('fill', '#FFD27A'); } });
+      msg.className = 'eq';
+      msg.textContent = `${p.cells[p.pair[0]]} ${p.op === 'add' ? '+' : '×'} ${p.cells[p.pair[1]]} = ${p.cells[p.answer]}`;
+      next.textContent = i < P.length - 1 ? 'Próximo desafio' : 'Jogar o jogo completo';
+      next.hidden = false;
+    } else {
+      g.classList.remove('shake'); void g.getBBox(); g.classList.add('shake');
+      msg.className = ''; msg.textContent = 'Esse não. Tente de novo.';
+    }
+  }
+  next.addEventListener('click', () => { if (i < P.length - 1) { i++; draw(); svg.querySelector('.cell').focus(); } else { location.href = '/play.html'; } });
+  draw();
+})();
+</script>
+<div class="wrap"><footer>
+  <div class="cols">
+    <a class="brand" href="/" style="flex:none;color:var(--ink)"><span class="hex" aria-hidden="true"></span>Beequation</a>
+    <a href="https://beequation.com/play.html">Jogar online</a><a href="/about.html">Sobre</a><a href="/support.html">Ajuda</a><a href="/privacy.html">Privacidade</a><a href="/terms.html">Termos</a>
+    <a href="https://www.facebook.com/beequationapp">Facebook</a><a href="https://www.instagram.com/beequationapp">Instagram</a><a href="https://www.tiktok.com/@beequationapp">TikTok</a><a href="https://www.youtube.com/@beequationapp">YouTube</a><a href="https://x.com/beequationapp">X</a>
+  </div>
+  <p style="margin:0">Beequation é um produto da Trett Labs Limited, empresa registrada na Inglaterra e no País de Gales sob o número 17310137. Sede: The 1812 Building, Wheatley Park, Mirfield, West Yorkshire, WF14 8HE, Reino Unido. Contato: <a href="mailto:hello@beequation.com">hello@beequation.com</a>. © 2026 Trett Labs Limited.</p>
+</footer></div>
+</body></html>
